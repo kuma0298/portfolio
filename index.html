@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Harsh Kumar | Web Developer & Photographer"/>
+  <title>Harsh Kumar | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">Harsh Kumar</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#photography">Photography</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-circle-half-stroke"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero section" id="about" data-animate="fade-in">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Hey, I'm Harsh.</h1>
+        <p>A creative developer & photographer crafting smooth, modern digital experiences.</p>
+        <a href="#projects" class="btn">See My Work</a>
+      </div>
+      <div class="hero-image">
+        <img src="./images/WhatsApp Image 2025-01-06 at 1.18.18 PM.jpeg" alt="Harsh Kumar" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects-section" id="projects" data-animate="slide-up">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="card-grid">
+        <div class="card glass" data-animate="fade-in">
+          <h3>Project One</h3>
+          <p>Responsive landing page with HTML/CSS/JS</p>
+          <a href="#" class="link">View Project →</a>
+        </div>
+        <div class="card glass" data-animate="fade-in">
+          <h3>Portfolio Template</h3>
+          <p>Personal portfolio built with Bootstrap and GSAP</p>
+          <a href="#" class="link">View Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photography Section -->
+  <section class="section" id="photography" data-animate="zoom-in">
+    <div class="container text-center">
+      <h2 class="section-title">Photography</h2>
+      <p>I love capturing light, emotion, and real stories through a lens.</p>
+      <img src="./images/WhatsApp Image 2024-12-02 at 3.26.53 PM.jpeg" class="photo-preview" alt="Photography sample" />
+      <br>
+      <a href="https://kuma0298.myportfolio.com/" class="btn mt-2">View Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact" data-animate="fade-in">
+    <div class="container text-center">
+      <h2 class="section-title">Let's Talk</h2>
+      <p>Email: <a href="mailto:harshnagpal1807@gmail.com">harshnagpal1807@gmail.com</a></p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="www.linkedin.com/in/harsh-kumar-baaab0211"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2025 Harsh Kumar</p>
+    </div>
+  </footer>
+
+  <!-- JS for Scroll Animations + Dark Mode -->
+  <script>
+    // Dark/Light mode toggle
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
